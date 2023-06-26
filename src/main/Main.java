@@ -17,7 +17,7 @@ public class Main {
 		WebDriver driver = new ChromeDriver();
 
 		// 開きたいサイトのURLを取得
-		driver.get("http://localhost:8080/pegopa/");
+		driver.get("http://localhost:8080/pegopa/view/login.jsp");
 
 		LoginTest logintest = new LoginTest(driver);
 
