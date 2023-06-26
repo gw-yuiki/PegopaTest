@@ -1,10 +1,9 @@
 package main;
 
-import org.openqa.selenium.*;
-
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
 
 public class Main {
@@ -25,7 +24,11 @@ public class Main {
 		Thread.sleep(500);
 		logintest.Login();
 
+		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
 
+		//ユーザー情報変更
+		Thread.sleep(500);
+		accountUpdateTest.AccountUpdate();
 
 		//driver.quit();
 	}
