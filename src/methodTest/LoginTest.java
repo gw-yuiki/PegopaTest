@@ -23,7 +23,7 @@ public class LoginTest {
 
 		// ユーザーID欄にemailと入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("email");
+		user.sendKeys("email@gw.co.jp");
 
 		// パスワード欄にpwと入力
 		WebElement password = driver.findElement(By.name("pw"));
@@ -57,7 +57,7 @@ public class LoginTest {
 
 		// ユーザーID欄にemailと入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("email");
+		user.sendKeys("email@gw.co.jp");
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
