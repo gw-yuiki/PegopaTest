@@ -1,7 +1,9 @@
 package methodTest;
 
-import org.openqa.selenium.*;
-
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class LoginTest {
 
@@ -31,6 +33,9 @@ public class LoginTest {
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
+
+		// 処理終了
+		driver.findElement(By.linkText("【会員情報変更】")).click();
 	}
 
 	// ユーザーID欄を未入力でログインボタン押下
