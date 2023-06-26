@@ -5,10 +5,7 @@ import org.openqa.selenium.*;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import methodTest.InsertTest;
-import methodTest.UpdateTest;
-import methodTest.ListTest;
-import methodTest.DetailTest;
+import methodTest.LoginTest;
 
 public class Main {
 
@@ -22,24 +19,15 @@ public class Main {
 		// 開きたいサイトのURLを取得
 		driver.get("http://localhost:8080/pegopa/");
 
+		LoginTest logintest = new LoginTest(driver);
+
 		// ログイン
 		Thread.sleep(500);
-		Login(driver);
+		logintest.Login();
+
+
 
 		//driver.quit();
-	}
-
-	public static void Login(WebDriver driver) {
-
-		// ユーザー欄とパスワード欄にkandaitと入力
-		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("email");
-
-		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys("pw");
-
-		// ログインボタンを押す
-		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
 	}
 
 }
