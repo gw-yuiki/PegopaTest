@@ -76,18 +76,7 @@ public class UniformInsertTest {
 	// 商品名だけ未挿入または価格だけ未入力の場合
 	public void insert202() throws InterruptedException {
 
-		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("admin@gw.co.jp");
-
-		// パスワード欄入力
-		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys("abcde12345?");
-
-		// ログインボタンを押す
-		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
-
 		driver.findElement(By.linkText("【商品登録】")).click();
-
 
 		// 商品名未入力
 
