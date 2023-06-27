@@ -40,7 +40,7 @@ public class UniformListTest {
 
 		// 正常動作確認
 		listtest.list100();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		listtest.list202();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
@@ -60,14 +60,12 @@ public class UniformListTest {
 
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
-//		driver.findElement(By.linkText(String.valueOf(id))).click();
 		Thread.sleep(500);
 		driver.findElement(By.linkText("【詳細一覧】")).click();
 
 		// 正常処理終了
 		// No.103 メニュー画面に戻る
 		driver.findElement(By.linkText("【メニュー】")).click();
-		Thread.sleep(500);
 	}
 
 	// 異常処理
@@ -88,8 +86,12 @@ public class UniformListTest {
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
 
+		// 一覧に戻るをクリック
+		driver.findElement(By.linkText("【ログアウト】")).click();
+
 	}
 
+	//別のテストで使うので残しています
 	//　購入確認時、押下する予定の商品情報をMySQL上から削除する
 //		public void list204() throws InterruptedException {
 //			// 書籍登録画面まで遷移する

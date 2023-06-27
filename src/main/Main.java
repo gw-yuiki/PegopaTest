@@ -25,23 +25,27 @@ public class Main {
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
 		UniformListTest uniformListTest = new UniformListTest(driver);
 
-		// 新規会員登録
-		Thread.sleep(500);
-		accountInsertTest.Insert();
+//		// 新規会員登録
+//		Thread.sleep(500);
+//		accountInsertTest.Insert();
 
 		// ログイン
 		Thread.sleep(500);
 		logintest.Login();
 
-		// 商品一覧
-		Thread.sleep(500);
-		uniformListTest.UniformList();
-
 		//ユーザー情報変更
 		Thread.sleep(500);
 		accountUpdateTest.AccountUpdate();
 
-		driver.quit();
+		// 商品一覧
+		Thread.sleep(500);
+		uniformListTest.UniformList();
+
+		// 管理者ログイン
+		Thread.sleep(500);
+		logintest.adminLogin();
+
+		//driver.quit();
 	}
 
 }
