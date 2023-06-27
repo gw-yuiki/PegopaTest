@@ -39,14 +39,13 @@ public class Main {
 		Thread.sleep(500);
 		accountUpdateTest.AccountUpdate();
 
+		// ログイン
+		Thread.sleep(500);
+		logintest.Login();
 
-//		//ユーザーメニュー
-//		Thread.sleep(500);
-//		menuTest.userMenu();
-
-//		//管理者メニュー
-//		Thread.sleep(500);
-//		menuTest.adminMenu();
+		//ユーザーメニュー
+		Thread.sleep(500);
+		menuTest.userMenu();
 
 		// 商品一覧
 		Thread.sleep(500);
@@ -55,6 +54,10 @@ public class Main {
 		// 管理者ログイン
 		Thread.sleep(500);
 		logintest.adminLogin();
+
+		//管理者メニュー
+		Thread.sleep(500);
+		menuTest.adminMenu();
 
 
 		driver.quit();
