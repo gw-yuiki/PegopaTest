@@ -15,12 +15,6 @@ public class AccountUpdateTest {
 
 	public void AccountUpdate() throws InterruptedException {
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
-		// 入力されている氏名を削除
-		driver.findElement(By.name("name")).clear();
-		// メールアドレスを削除
-		driver.findElement(By.name("email")).clear();
-		// 住所を削除
-		driver.findElement(By.name("address")).clear();
 		accountUpdateTest.accountUpdate101();
 		accountUpdateTest.accountUpdate102();
 		accountUpdateTest.accountUpdate103();
@@ -97,7 +91,7 @@ public class AccountUpdateTest {
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
 		address.sendKeys("愛知県");
-    
+
 		// 入力したパスワードを削除
 		driver.findElement(By.name("pw")).clear();
 		// パスワード(確認用)を削除
@@ -117,6 +111,7 @@ public class AccountUpdateTest {
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
+		pwCheck.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));

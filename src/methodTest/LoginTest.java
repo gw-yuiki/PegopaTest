@@ -1,15 +1,14 @@
 package methodTest;
 
-import org.openqa.selenium.Alert;
+import java.util.ArrayList;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-
-import dao.AccountDAO;
 import bean.Account;
+import dao.AccountDAO;
 
 public class LoginTest {
 
@@ -52,7 +51,7 @@ public class LoginTest {
 
 		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys(list.get(7).getPw());
+		password.sendKeys(list.get(8).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
