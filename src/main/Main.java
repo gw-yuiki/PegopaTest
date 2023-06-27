@@ -25,9 +25,9 @@ public class Main {
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
 		UniformListTest uniformListTest = new UniformListTest(driver);
 
-//		// 新規会員登録
-//		Thread.sleep(500);
-//		accountInsertTest.Insert();
+		// 新規会員登録
+		Thread.sleep(500);
+		accountInsertTest.Insert();
 
 		// ログイン
 		Thread.sleep(500);
@@ -45,7 +45,6 @@ public class Main {
 		Thread.sleep(500);
 		logintest.adminLogin();
 
-		//driver.quit();
+		driver.quit();
 	}
-
 }
