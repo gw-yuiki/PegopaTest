@@ -1,10 +1,7 @@
 package methodTest;
 
 import org.openqa.selenium.*;
-
 import dao.AccountDAO;
-
-
 
 public class AccountInsertTest {
 
@@ -121,8 +118,57 @@ public class AccountInsertTest {
 		address.clear();
 	}
 
-	// パスワードを未入力で登録ボタンを押下した際にアラートが出るか
+	// 氏名を未入力で登録ボタンを押下した際にアラートが出るか
 	public void insert203() throws InterruptedException {
+
+		// 既存のユーザーID以外を指定
+		boolean uniqueCheck;
+		String InputEmail = "";
+		int i = 1;
+		while (true) {
+			// ユーザーIDが重複していないかチェック
+			InputEmail = "email" + i + "@gw.co.jp";
+			uniqueCheck = AccountDAO.loginCheck(InputEmail);
+			if (uniqueCheck == true) {
+				break;
+			}
+			i++;
+		}
+		// ユーザーID欄を入力
+		WebElement email = driver.findElement(By.name("email"));
+		email.sendKeys(InputEmail);
+
+		// 氏名欄未入力
+
+		// パスワード欄を入力
+		WebElement pw = driver.findElement(By.name("pw"));
+		pw.sendKeys("abcde12345?");
+
+		// パスワード確認欄を入力
+		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
+		pwCheck.sendKeys("abcde12345?");
+
+		// 住所欄を入力
+		WebElement address = driver.findElement(By.name("address"));
+		address.sendKeys("東京都渋谷区");
+
+		// 登録ボタンをクリック
+		driver.findElement(By.cssSelector("input[value='登録']")).click();
+
+		// アラートのOKボタンを押下
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(500);
+		alert.accept();
+
+		// 入力した項目を全てクリア
+		email.clear();
+		pw.clear();
+		pwCheck.clear();
+		address.clear();
+	}
+
+	// パスワードを未入力で登録ボタンを押下した際にアラートが出るか
+	public void insert204() throws InterruptedException {
 
 		// 既存のユーザーID以外を指定
 		boolean uniqueCheck;
@@ -167,55 +213,6 @@ public class AccountInsertTest {
 		// 入力した項目を全てクリア
 		email.clear();
 		name.clear();
-		pwCheck.clear();
-		address.clear();
-	}
-
-	// 氏名を未入力で登録ボタンを押下した際にアラートが出るか
-	public void insert204() throws InterruptedException {
-
-		// 既存のユーザーID以外を指定
-		boolean uniqueCheck;
-		String InputEmail = "";
-		int i = 1;
-		while (true) {
-			// ユーザーIDが重複していないかチェック
-			InputEmail = "email" + i + "@gw.co.jp";
-			uniqueCheck = AccountDAO.loginCheck(InputEmail);
-			if (uniqueCheck == true) {
-				break;
-			}
-			i++;
-		}
-		// ユーザーID欄を入力
-		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys(InputEmail);
-
-		// 氏名欄未入力
-
-		// パスワード欄を入力
-		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("abcde12345?");
-
-		// パスワード確認欄を入力
-		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("abcde12345?");
-
-		// 住所欄を入力
-		WebElement address = driver.findElement(By.name("address"));
-		address.sendKeys("東京都渋谷区");
-
-		// 登録ボタンをクリック
-		driver.findElement(By.cssSelector("input[value='登録']")).click();
-
-		// アラートのOKボタンを押下
-		Alert alert = driver.switchTo().alert();
-		Thread.sleep(500);
-		alert.accept();
-
-		// 入力した項目を全てクリア
-		email.clear();
-		pw.clear();
 		pwCheck.clear();
 		address.clear();
 	}
@@ -268,6 +265,7 @@ public class AccountInsertTest {
 		pw.clear();
 		address.clear();
 	}
+
 	// 住所欄を未入力で登録ボタンを押下した際にアラートが出るか
 	public void insert206() throws InterruptedException {
 
