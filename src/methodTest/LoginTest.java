@@ -33,11 +33,11 @@ public class LoginTest {
 
 		// ユーザーID入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys(list.get(7).getEmail());
+		user.sendKeys(list.get(8).getEmail());
 
 		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys(list.get(7).getPw());
+		password.sendKeys(list.get(8).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
@@ -52,7 +52,7 @@ public class LoginTest {
 
 		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys(list.get(7).getPw());
+		password.sendKeys(list.get(8).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
@@ -73,7 +73,7 @@ public class LoginTest {
 
 		// ユーザーID入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys(list.get(7).getEmail());
+		user.sendKeys(list.get(8).getEmail());
 
 		// パスワード欄未入力
 
