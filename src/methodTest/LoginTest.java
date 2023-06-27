@@ -62,6 +62,7 @@ public class LoginTest {
 		WebElement password = driver.findElement(By.name("pw"));
 		password.sendKeys(list.get(0).getPw());
 
+
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
 	}

@@ -8,6 +8,7 @@ import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
 import methodTest.MenuTest;
 import methodTest.UniformListTest;
+import methodTest.UniformInsertTest;
 
 public class Main {
 
@@ -26,6 +27,7 @@ public class Main {
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
 		MenuTest menuTest = new MenuTest(driver);
 		UniformListTest uniformListTest = new UniformListTest(driver);
+		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 
 		// 新規会員登録
 		Thread.sleep(500);
@@ -59,6 +61,8 @@ public class Main {
 		Thread.sleep(500);
 		menuTest.adminMenu();
 
+		Thread.sleep(500);
+		uniforminserttest.insert();
 
 		driver.quit();
 	}
