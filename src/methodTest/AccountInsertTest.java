@@ -19,9 +19,6 @@ public class AccountInsertTest {
 
 		AccountInsertTest ait = new AccountInsertTest(driver);
 
-		// 新規会員登録画面に遷移
-		driver.findElement(By.linkText("新規会員登録はこちら")).click();
-
 		// ユーザーIDを未入力で登録ボタンを押下した際にアラートが出るか
 		ait.insert202();
 		// パスワードを未入力で登録ボタンを押下した際にアラートが出るか
@@ -35,9 +32,6 @@ public class AccountInsertTest {
 
 		// 正常に会員を登録できるか
 		ait.insert101();
-
-		// ログイン画面に戻る
-		driver.findElement(By.linkText("【ログイン画面に戻る】")).click();
 	}
 
 	// 正常に会員を登録できるか
@@ -83,10 +77,16 @@ public class AccountInsertTest {
 		Alert alert = driver.switchTo().alert();
 		Thread.sleep(500);
 		alert.accept();
+
+		// ログイン画面に戻る
+		driver.findElement(By.linkText("【ログイン画面に戻る】")).click();
 	}
 
 	// ユーザーIDを未入力で登録ボタンを押下した際にアラートが出るか
 	public void insert202() throws InterruptedException {
+
+		// 新規会員登録画面に遷移
+		driver.findElement(By.linkText("新規会員登録はこちら")).click();
 
 		// ユーザーID未入力
 

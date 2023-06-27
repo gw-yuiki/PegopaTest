@@ -25,7 +25,7 @@ public class AccountUpdateTest {
 	}
 
 	// 正常にユーザー情報を変更できるか
-	public void accountUpdate100() {
+	public void accountUpdate100() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));
@@ -33,11 +33,11 @@ public class AccountUpdateTest {
 
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pw");
+		pwCheck.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));
@@ -50,20 +50,38 @@ public class AccountUpdateTest {
 		// 登録ボタンをクリック
 		driver.findElement(By.cssSelector("input[value='変更完了']")).submit();
 
+		// ダイアログのOKボタンを押下
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(500);
+		alert.accept();
+
 		// メニューボタンをクリック
 		driver.findElement(By.linkText("【メニュー画面に戻る】")).click();
+
 	}
 
 	// 氏名を未入力で変更完了ボタン押下
 	public void accountUpdate101() throws InterruptedException {
 
+		// 会員情報変更ボタンクリック
+		driver.findElement(By.linkText("【会員情報変更】")).click();
+
+		// 入力したパスワードを削除
+		driver.findElement(By.name("pw")).clear();
+		// パスワード(確認用)を削除
+		driver.findElement(By.name("pwCheck")).clear();
+		// メールアドレスを削除
+		driver.findElement(By.name("email")).clear();
+		// 住所を削除
+		driver.findElement(By.name("address")).clear();
+
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pw");
+		pwCheck.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));
@@ -72,14 +90,6 @@ public class AccountUpdateTest {
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
 		address.sendKeys("愛知県");
-
-		// 変更完了ボタンを押す
-		driver.findElement(By.cssSelector("input[value='変更完了']")).click();
-
-		// ダイアログのOKボタンを押下
-		Alert alert = driver.switchTo().alert();
-		Thread.sleep(500);
-		alert.accept();
 
 		// 入力したパスワードを削除
 		driver.findElement(By.name("pw")).clear();
@@ -100,7 +110,7 @@ public class AccountUpdateTest {
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pw");
+		pwCheck.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));
@@ -137,7 +147,7 @@ public class AccountUpdateTest {
 
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));
@@ -174,11 +184,11 @@ public class AccountUpdateTest {
 
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pw");
+		pwCheck.sendKeys("abcde12345?");
 
 		//メールアドレスを入力
 		WebElement email = driver.findElement(By.name("email"));
@@ -211,11 +221,11 @@ public class AccountUpdateTest {
 
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pw");
+		pwCheck.sendKeys("abcde12345?");
 
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
@@ -249,11 +259,11 @@ public class AccountUpdateTest {
 
 		//パスワードを入力
 		WebElement pw = driver.findElement(By.name("pw"));
-		pw.sendKeys("pw");
+		pw.sendKeys("abcde12345?");
 
 		//パスワード(確認用)を入力
 		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
-		pwCheck.sendKeys("pww");
+		pwCheck.sendKeys("abcde123456?");
 
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));

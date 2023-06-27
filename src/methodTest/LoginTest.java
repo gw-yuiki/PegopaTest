@@ -1,9 +1,15 @@
 package methodTest;
 
 import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+
+import dao.AccountDAO;
+import bean.Account;
 
 public class LoginTest {
 
@@ -23,27 +29,30 @@ public class LoginTest {
 	// 正常にログインできるか
 	public void login101() throws InterruptedException {
 
-		// ユーザーID欄にemailと入力
-		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("email@gw.co.jp");
+		ArrayList<Account> list = AccountDAO.selectAll();
 
-		// パスワード欄にpwと入力
+		// ユーザーID入力
+		WebElement user = driver.findElement(By.name("name"));
+		user.sendKeys(list.get(7).getEmail());
+
+		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys("pw");
+		password.sendKeys(list.get(7).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
-
-		// 処理終了
-		driver.findElement(By.linkText("【会員情報変更】")).click();
 	}
 
 	// ユーザーID欄を未入力でログインボタン押下
 	public void login202() throws InterruptedException {
 
-		// パスワード欄にpwと入力
+		ArrayList<Account> list = AccountDAO.selectAll();
+
+		// ユーザーID欄未入力
+
+		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys("pw");
+		password.sendKeys(list.get(7).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
@@ -60,9 +69,13 @@ public class LoginTest {
 	// パスワード欄を未入力でログインボタン押下
 	public void login203() throws InterruptedException {
 
-		// ユーザーID欄にemailと入力
+		ArrayList<Account> list = AccountDAO.selectAll();
+
+		// ユーザーID入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys("email@gw.co.jp");
+		user.sendKeys(list.get(7).getEmail());
+
+		// パスワード欄未入力
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
