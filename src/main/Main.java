@@ -3,9 +3,10 @@ package main;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import methodTest.AccountInsertTest;
 import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
-import methodTest.AccountInsertTest;
+import methodTest.MenuTest;
 import methodTest.UniformListTest;
 import methodTest.UniformInsertTest;
 
@@ -24,6 +25,7 @@ public class Main {
 		LoginTest logintest = new LoginTest(driver);
 		AccountInsertTest accountInsertTest = new AccountInsertTest(driver);
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
+		MenuTest menuTest = new MenuTest(driver);
 		UniformListTest uniformListTest = new UniformListTest(driver);
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 		uniforminserttest.insert();
@@ -41,6 +43,14 @@ public class Main {
 		Thread.sleep(500);
 		accountUpdateTest.AccountUpdate();
 
+		// ログイン
+		Thread.sleep(500);
+		logintest.Login();
+
+		//ユーザーメニュー
+		Thread.sleep(500);
+		menuTest.userMenu();
+
 		// 商品一覧
 		Thread.sleep(500);
 		uniformListTest.UniformList();
@@ -48,6 +58,11 @@ public class Main {
 		// 管理者ログイン
 		Thread.sleep(500);
 		logintest.adminLogin();
+
+		//管理者メニュー
+		Thread.sleep(500);
+		menuTest.adminMenu();
+
 
 		driver.quit();
 	}

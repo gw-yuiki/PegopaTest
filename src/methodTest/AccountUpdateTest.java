@@ -55,7 +55,7 @@ public class AccountUpdateTest {
 		alert.accept();
 
 		// メニューボタンをクリック
-		driver.findElement(By.linkText("【メニュー画面に戻る】")).click();
+		driver.findElement(By.linkText("【ログイン画面に戻る】")).click();
 
 	}
 
@@ -159,8 +159,6 @@ public class AccountUpdateTest {
 		WebElement email = driver.findElement(By.name("email"));
 		email.sendKeys("ichiro@japan.co.jp");
 
-		//パスワード(確認用)を入力
-		WebElement pwCheck = driver.findElement(By.name("pwCheck"));
 
 		// 変更完了ボタンを押す
 		driver.findElement(By.cssSelector("input[value='変更完了']")).click();
@@ -170,14 +168,16 @@ public class AccountUpdateTest {
 		Thread.sleep(500);
 		alert.accept();
 
+		// ダイアログのOKボタンを押下
+		Thread.sleep(500);
+		alert.accept();
+
 		// 入力した氏名を削除
 		driver.findElement(By.name("name")).clear();
 		// 住所を削除
 		driver.findElement(By.name("address")).clear();
 		// メールアドレスを削除
 		driver.findElement(By.name("email")).clear();
-		// パスワード(確認用)を削除
-		driver.findElement(By.name("pwCheck")).clear();
 	}
 
 	// パスワード(確認用)を未入力で変更完了ボタン押下

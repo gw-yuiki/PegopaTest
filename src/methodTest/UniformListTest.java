@@ -1,21 +1,13 @@
 package methodTest;
 
-import org.openqa.selenium.By;
-
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.NoSuchElementException;
-
 import java.util.ArrayList;
 
-import dao.UniformDAO;
-import dao.AccountDAO;
-import dao.OrderDAO;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+
 import bean.Uniform;
-import bean.Account;
-import bean.Order;
+import dao.UniformDAO;
 
 public class UniformListTest {
 
@@ -61,7 +53,7 @@ public class UniformListTest {
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 		Thread.sleep(500);
-		driver.findElement(By.linkText("【詳細一覧】")).click();
+		driver.findElement(By.linkText("【商品一覧】")).click();
 
 		// 正常処理終了
 		// No.103 メニュー画面に戻る
