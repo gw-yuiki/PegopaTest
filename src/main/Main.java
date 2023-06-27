@@ -7,6 +7,7 @@ import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
 import methodTest.AccountInsertTest;
 import methodTest.UniformListTest;
+import methodTest.UniformInsertTest;
 
 public class Main {
 
