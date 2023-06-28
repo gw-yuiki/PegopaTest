@@ -44,8 +44,8 @@ public class Main {
 //		accountInsertTest.Insert();
 //
 		// ログイン
-		Thread.sleep(500);
-		logintest.Login();
+//		Thread.sleep(500);
+//		logintest.Login();
 //
 //		//ユーザー情報変更
 //		Thread.sleep(500);
@@ -67,9 +67,9 @@ public class Main {
 //		Thread.sleep(500);
 //		logintest.adminLogin();
 //
-//		//管理者メニュー
-		Thread.sleep(500);
-		menuTest.adminMenu();
+//  	//管理者メニュー
+//		Thread.sleep(500);
+//		menuTest.adminMenu();
 
 //		//商品新規登録
 //		Thread.sleep(500);
@@ -95,23 +95,23 @@ public class Main {
 //		Thread.sleep(500);
 //		uniforminserttest.insert();
 
-		Thread.sleep(500);
-		uniforminserttest.insert();
-		//管理者受注一覧
-		Thread.sleep(500);
-		orderhistorylisttest.adminList();
-
-		// 商品変更
-		Thread.sleep(500);
-		uniformUpdateTest.update();
-
-		//管理者受注詳細
-		Thread.sleep(500);
-		orderhistoryupdatetest.update();
-
-		// 管理者商品一覧
-		Thread.sleep(500);
-		uniformListTest.adminUniformList();
+//		Thread.sleep(500);
+//		uniforminserttest.insert();
+//		//管理者受注一覧
+//		Thread.sleep(500);
+//		orderhistorylisttest.adminList();
+//
+//		// 商品変更
+//		Thread.sleep(500);
+//		uniformUpdateTest.update();
+//
+//		//管理者受注詳細
+//		Thread.sleep(500);
+//		orderhistoryupdatetest.update();
+//
+//		// 管理者商品一覧
+//		Thread.sleep(500);
+//		uniformListTest.adminUniformList();
 
 		driver.quit();
 	}
