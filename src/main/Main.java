@@ -38,6 +38,7 @@ public class Main {
 		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
 		OrderBuyTest orderBuyTest = new OrderBuyTest(driver);
 
+
 		// 新規会員登録
 //		Thread.sleep(500);
 //		accountInsertTest.Insert();
@@ -67,9 +68,9 @@ public class Main {
 //		logintest.adminLogin();
 //
 //		//管理者メニュー
-//		Thread.sleep(500);
-//		menuTest.adminMenu();
-//
+		Thread.sleep(500);
+		menuTest.adminMenu();
+
 //		//商品新規登録
 //		Thread.sleep(500);
 //		uniforminserttest.insert();
@@ -93,10 +94,16 @@ public class Main {
 		//管理者商品新規登録
 //		Thread.sleep(500);
 //		uniforminserttest.insert();
-//
+
+		Thread.sleep(500);
+		uniforminserttest.insert();
 		//管理者受注一覧
 		Thread.sleep(500);
-		orderhistorylisttest.list();
+		orderhistorylisttest.adminList();
+
+		// 商品変更
+		Thread.sleep(500);
+		uniformUpdateTest.update();
 
 		//管理者受注詳細
 		Thread.sleep(500);
