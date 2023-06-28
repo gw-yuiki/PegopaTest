@@ -8,7 +8,7 @@ public class UniformInsertTest {
 
 	private WebDriver driver;
 
-	String imgPath = "C:\\Users\\Globalway\\Pictures\\Camera Roll\\IMG_6879.png";
+	String imgPath = "C:\\Users\\Globalway\\Pictures\\testimg\\gwicon.png";
 
 	public UniformInsertTest(WebDriver driver) {
 		this.driver = driver;
@@ -198,7 +198,7 @@ public class UniformInsertTest {
 		name.sendKeys("テスト商品");
 
 		// エクセルファイルを挿入
-		String imgPath = "C:\\usr\\kis_java_pkg_ver4.8\\workspace\\TestCase_bmsdb10j_stepbystep2.xls";
+		String imgPath = "C:\\\\Users\\\\Globalway\\\\Pictures\\\\testimg\\\\excel.xls";
 		WebElement img = driver.findElement(By.name("img"));
 		img.sendKeys(imgPath);
 

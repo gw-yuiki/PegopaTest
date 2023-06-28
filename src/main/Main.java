@@ -32,7 +32,7 @@ public class Main {
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
 
-//		// 新規会員登録
+		// 新規会員登録
 //		Thread.sleep(500);
 //		accountInsertTest.Insert();
 //
@@ -60,20 +60,20 @@ public class Main {
 		Thread.sleep(500);
 		logintest.adminLogin();
 
-//		//管理者メニュー
-//		Thread.sleep(500);
-//		menuTest.adminMenu();
-//
-//		//商品新規登録
-//		Thread.sleep(500);
-//		uniforminserttest.insert();
-
-		// 商品一覧
+		//管理者メニュー
 		Thread.sleep(500);
-		uniformListTest.adminUniformList();
+		menuTest.adminMenu();
+
+		//商品新規登録
+		Thread.sleep(500);
+		uniforminserttest.insert();
 
 		Thread.sleep(500);
 		orderhistorylisttest.list();
+
+		// 管理者商品一覧
+		Thread.sleep(500);
+		uniformListTest.adminUniformList();
 
 		driver.quit();
 	}
