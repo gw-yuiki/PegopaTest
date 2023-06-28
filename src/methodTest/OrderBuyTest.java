@@ -140,6 +140,7 @@ public class OrderBuyTest {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
+		int id = list.get(1).getId();
 		//商品クリック
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 

@@ -105,8 +105,6 @@ public class UniformListTest {
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
 
-		// 一覧に戻るをクリック
-		driver.findElement(By.linkText("【ログアウト】")).click();
 
 	}
 
@@ -129,7 +127,6 @@ public class UniformListTest {
 
 		// メニューに戻るをクリック
 		driver.findElement(By.linkText("【メニュー】")).click();
-		driver.findElement(By.linkText("【ログアウト】")).click();
 
 	}
 }

@@ -1,6 +1,10 @@
 package methodTest;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import dao.AccountDAO;
 
 public class AccountInsertTest {
@@ -207,7 +211,6 @@ public class AccountInsertTest {
 		// アラートのOKボタンを押下
 		Alert alert = driver.switchTo().alert();
 		Thread.sleep(500);
-		alert.accept();
 		alert.accept();
 
 		// 入力した項目を全てクリア
