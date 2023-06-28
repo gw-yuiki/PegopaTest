@@ -9,9 +9,11 @@ import methodTest.LoginTest;
 import methodTest.MenuTest;
 import methodTest.OrderBuyTest;
 import methodTest.OrderHistoryListTest;
+import methodTest.OrderHistoryUpdateTest;
 import methodTest.UniformInsertTest;
 import methodTest.UniformListTest;
 import methodTest.UniformUpdateTest;
+
 
 public class Main {
 
@@ -32,6 +34,7 @@ public class Main {
 		UniformListTest uniformListTest = new UniformListTest(driver);
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
+		OrderHistoryUpdateTest orderhistoryupdatetest = new OrderHistoryUpdateTest(driver);
 		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
 		OrderBuyTest orderBuyTest = new OrderBuyTest(driver);
 
@@ -83,6 +86,25 @@ public class Main {
 //		uniformListTest.adminUniformList();
 
 		orderBuyTest.OrderBuy();
+		// 商品変更
+//		Thread.sleep(500);
+//		uniformUpdateTest.update();
+
+		//管理者商品新規登録
+//		Thread.sleep(500);
+//		uniforminserttest.insert();
+//
+		//管理者受注一覧
+		Thread.sleep(500);
+		orderhistorylisttest.list();
+
+		//管理者受注詳細
+		Thread.sleep(500);
+		orderhistoryupdatetest.update();
+
+		// 管理者商品一覧
+		Thread.sleep(500);
+		uniformListTest.adminUniformList();
 
 		driver.quit();
 	}
