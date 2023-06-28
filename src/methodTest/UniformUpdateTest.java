@@ -249,7 +249,7 @@ public class UniformUpdateTest {
 		// 在庫数を文字列で入力
 		stock.sendKeys("abcdef");
 
-		// 登録ボタンを押す
+		// 変更ボタンを押す
 		driver.findElement(By.cssSelector("input[value='変更']")).click();
 
 		// ダイアログのOKボタンを押下
@@ -264,23 +264,22 @@ public class UniformUpdateTest {
 	}
 
 	// 異常処理
-	// 変更ボタン押下する予定の商品情報をMySQL上から削除する
+	// 商品リンク押下する予定の商品情報をMySQL上から削除する
 	public void update106() throws InterruptedException {
 
-		// 書籍登録画面まで遷移する
+		// 商品更新画面まで遷移する
 		try {
-			driver.findElements(By.className("product")).get(0).click();
+			driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + id);
 		} catch (NoSuchElementException e) {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
 		uniformDao.delete(id);
-		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
+		// 変更ボタンを押す
+		driver.findElement(By.cssSelector("input[value='変更']")).click();
 		Thread.sleep(1000);
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
-
 	}
-
 }
