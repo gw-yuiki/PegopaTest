@@ -51,7 +51,7 @@ public class Main {
 
 		// ログイン
 		Thread.sleep(500);
-		logintest.Login();
+		logintest.LoginOmission();
 
 		//ユーザーメニュー
 		Thread.sleep(500);
@@ -67,7 +67,7 @@ public class Main {
 
 		// ログイン
 		Thread.sleep(500);
-		logintest.Login();
+		logintest.LoginOmission();
 
 		//注文履歴
 		Thread.sleep(500);

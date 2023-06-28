@@ -41,7 +41,7 @@ public class UniformInsertTest {
 
 		// 在庫数入力
 		WebElement stock = driver.findElement(By.name("stock"));
-		stock.sendKeys("6");
+		stock.sendKeys("300");
 
 		// 登録ボタンを押す
 		driver.findElement(By.cssSelector("input[value='登録']")).click();
@@ -56,7 +56,7 @@ public class UniformInsertTest {
 
 		// 商品名入力
 		WebElement name = driver.findElement(By.name("name"));
-		name.sendKeys("テスト商品");
+		name.sendKeys("画像テスト商品");
 
 		// 画像未挿入
 
@@ -66,7 +66,7 @@ public class UniformInsertTest {
 
 		// 在庫数入力
 		WebElement stock = driver.findElement(By.name("stock"));
-		stock.sendKeys("6");
+		stock.sendKeys("300");
 
 		// 登録ボタンを押す
 		driver.findElement(By.cssSelector("input[value='登録']")).click();
