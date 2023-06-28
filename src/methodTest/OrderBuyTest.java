@@ -2,12 +2,12 @@ package methodTest;
 
 import java.util.ArrayList;
 
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import bean.Account;
 import bean.Uniform;
@@ -140,6 +140,7 @@ public class OrderBuyTest {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
+		int id = list.get(1).getId();
 		//商品クリック
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 
@@ -215,13 +216,13 @@ public class OrderBuyTest {
 
 		//非会員のため情報入力
 
+		// 氏名を入力
+		WebElement name = driver.findElement(By.name("user_name"));
+		name.sendKeys("ichiro");
+
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
 		address.sendKeys("愛知県");
-
-		// メールを入力
-		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys("aichi@mail.com");
 
 		//セレクトボックス
 		WebElement quantity = driver.findElement(By.name("quantity"));
@@ -262,6 +263,7 @@ public class OrderBuyTest {
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 		uniformDao.delete(id);
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id + "&user_name=" + name + "&address="  + address + "&email=" + email + "%40gw.co.jp&quantity=1&content=");
+		Thread.sleep(1500);
 		driver.findElement(By.linkText("戻る")).click();
 	}
 }

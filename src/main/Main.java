@@ -14,7 +14,6 @@ import methodTest.UniformInsertTest;
 import methodTest.UniformListTest;
 import methodTest.UniformUpdateTest;
 
-
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -38,80 +37,69 @@ public class Main {
 		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
 		OrderBuyTest orderBuyTest = new OrderBuyTest(driver);
 
+		//新規会員登録
+		Thread.sleep(500);
+		accountInsertTest.Insert();
 
-		// 新規会員登録
-//		Thread.sleep(500);
-//		accountInsertTest.Insert();
-//
+		//ログイン
+		Thread.sleep(500);
+		logintest.Login();
+
+		//ユーザー情報変更
+		Thread.sleep(500);
+		accountUpdateTest.AccountUpdate();
+
 		// ログイン
-//		Thread.sleep(500);
-//		logintest.Login();
-//
-//		//ユーザー情報変更
-//		Thread.sleep(500);
-//		accountUpdateTest.AccountUpdate();
-//
-//		// ログイン
-//		Thread.sleep(500);
-//		logintest.Login();
-//
-//		//ユーザーメニュー
-//		Thread.sleep(500);
-//		menuTest.userMenu();
-//
-//		// 商品一覧
-//		Thread.sleep(500);
-//		uniformListTest.UniformList();
+		Thread.sleep(500);
+		logintest.Login();
 
-//		// 管理者ログイン
-//		Thread.sleep(500);
-//		logintest.adminLogin();
-//
-//  	//管理者メニュー
-//		Thread.sleep(500);
-//		menuTest.adminMenu();
+		//ユーザーメニュー
+		Thread.sleep(500);
+		menuTest.userMenu();
 
-//		//商品新規登録
-//		Thread.sleep(500);
-//		uniforminserttest.insert();
-//
-//		Thread.sleep(500);
-//		orderhistorylisttest.list();
+		// 商品一覧
+		Thread.sleep(500);
+		uniformListTest.UniformList();
 
-//		// 商品変更
-//		Thread.sleep(500);
-//		uniformUpdateTest.update();
-//
-////		// 管理者商品一覧
-//		Thread.sleep(500);
-//		uniformListTest.adminUniformList();
-
+		//商品購入
+		Thread.sleep(500);
 		orderBuyTest.OrderBuy();
+
+		// ログイン
+		Thread.sleep(500);
+		logintest.Login();
+
+		//注文履歴
+		Thread.sleep(500);
+		orderhistorylisttest.userList();
+
+		// 管理者ログイン
+		Thread.sleep(500);
+		logintest.adminLogin();
+
+		//管理者メニュー
+		Thread.sleep(500);
+		menuTest.adminMenu();
+
+		// 管理者商品一覧
+		Thread.sleep(500);
+		uniformListTest.adminUniformList();
+
+		//商品新規登録
+		Thread.sleep(500);
+		uniforminserttest.insert();
+
 		// 商品変更
-//		Thread.sleep(500);
-//		uniformUpdateTest.update();
+		Thread.sleep(500);
+		uniformUpdateTest.update();
 
-		//管理者商品新規登録
-//		Thread.sleep(500);
-//		uniforminserttest.insert();
+		//管理者受注一覧
+		Thread.sleep(500);
+		orderhistorylisttest.adminList();
 
-//		Thread.sleep(500);
-//		uniforminserttest.insert();
-//		//管理者受注一覧
-//		Thread.sleep(500);
-//		orderhistorylisttest.adminList();
-//
-//		// 商品変更
-//		Thread.sleep(500);
-//		uniformUpdateTest.update();
-//
-//		//管理者受注詳細
-//		Thread.sleep(500);
-//		orderhistoryupdatetest.update();
-//
-//		// 管理者商品一覧
-//		Thread.sleep(500);
-//		uniformListTest.adminUniformList();
+		//管理者受注詳細
+		Thread.sleep(500);
+		orderhistoryupdatetest.update();
 
 		driver.quit();
 	}

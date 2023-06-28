@@ -282,5 +282,8 @@ public class UniformUpdateTest {
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
+
+		// 一覧に戻るをクリック
+		driver.findElement(By.linkText("【メニュー】")).click();
 	}
 }
