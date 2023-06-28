@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import bean.Uniform;
 import dao.UniformDAO;
 
-public class UniformListTest {
+public class OrderBuyTest {
 
 	private WebDriver driver;
 
@@ -19,30 +19,18 @@ public class UniformListTest {
     int id = list.get(0).getId();
     int ad_id = list.get(1).getId();
 
-	public UniformListTest(WebDriver driver) {
+	public OrderBuyTest(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	//一覧機能をテストするメソッドを呼び出す
-	public void UniformList() throws InterruptedException {
-		UniformListTest listtest = new UniformListTest(driver);
+	public void OrderBuy() throws InterruptedException {
+		OrderBuyTest orderBuytest = new OrderBuyTest(driver);
 
 		// 正常動作確認
-		listtest.list101();
+		orderBuytest.list101();
 		Thread.sleep(500);
-		listtest.list201();
-
-		// DB接続エラーのテストケースがありますが、今回はやりません
-	}
-
-	//一覧機能をテストするメソッドを呼び出す
-	public void adminUniformList() throws InterruptedException {
-		UniformListTest listtest = new UniformListTest(driver);
-
-		// 正常動作確認
-		listtest.list102();
-		Thread.sleep(500);
-		listtest.list202();
+		orderBuytest.list201();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
 	}
