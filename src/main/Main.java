@@ -1,5 +1,6 @@
 package main;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -9,6 +10,7 @@ import methodTest.LoginTest;
 import methodTest.MenuTest;
 import methodTest.UniformListTest;
 import methodTest.UniformInsertTest;
+import methodTest.OrderHistoryListTest;
 
 public class Main {
 
@@ -28,8 +30,9 @@ public class Main {
 		MenuTest menuTest = new MenuTest(driver);
 		UniformListTest uniformListTest = new UniformListTest(driver);
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
+		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
 
-//		// 新規会員登録
+		// 新規会員登録
 //		Thread.sleep(500);
 //		accountInsertTest.Insert();
 //
@@ -57,15 +60,18 @@ public class Main {
 		Thread.sleep(500);
 		logintest.adminLogin();
 
-//		//管理者メニュー
-//		Thread.sleep(500);
-//		menuTest.adminMenu();
-//
-//		//商品新規登録
-//		Thread.sleep(500);
-//		uniforminserttest.insert();
+		//管理者メニュー
+		Thread.sleep(500);
+		menuTest.adminMenu();
 
-		// 商品一覧
+		//商品新規登録
+		Thread.sleep(500);
+		uniforminserttest.insert();
+
+		Thread.sleep(500);
+		orderhistorylisttest.list();
+
+		// 管理者商品一覧
 		Thread.sleep(500);
 		uniformListTest.adminUniformList();
 
