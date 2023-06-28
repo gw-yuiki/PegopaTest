@@ -41,7 +41,7 @@ public class Main {
 		Thread.sleep(500);
 		accountInsertTest.Insert();
 
-		//ログイン
+		// ログイン
 		Thread.sleep(500);
 		logintest.Login();
 
@@ -81,7 +81,7 @@ public class Main {
 		Thread.sleep(500);
 		menuTest.adminMenu();
 
-		// 管理者商品一覧
+		//管理者商品一覧
 		Thread.sleep(500);
 		uniformListTest.adminUniformList();
 

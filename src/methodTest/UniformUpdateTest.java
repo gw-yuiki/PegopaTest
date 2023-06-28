@@ -72,6 +72,7 @@ public class UniformUpdateTest {
 	// 種類を未入力で変更完了ボタン押下
 	public void update101() throws InterruptedException {
 
+		driver.findElement(By.linkText("【メニュー】")).click();
 		driver.findElement(By.linkText("【商品一覧】")).click();
 		driver.findElements(By.className("product")).get(0).click();
 

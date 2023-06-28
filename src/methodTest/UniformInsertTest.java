@@ -20,7 +20,7 @@ public class UniformInsertTest {
 		uniforminserttest.insert203();
 		uniforminserttest.insert204();
 		uniforminserttest.insert101();
-		//uniforminserttest.insert102(); pegopa最新バージョンになったらコメントアウト消す
+		uniforminserttest.insert102();
 	}
 
 	// 正常系
@@ -45,14 +45,13 @@ public class UniformInsertTest {
 
 		// 登録ボタンを押す
 		driver.findElement(By.cssSelector("input[value='登録']")).click();
-
-		driver.findElement(By.linkText("【メニュー】")).click(); //pegopa最新バージョンになったらこの処理はinsert102に移す
 	}
 
 	// 商品画像だけ未挿入
 	public void insert102() throws InterruptedException {
 
 		driver.findElement(By.linkText("【メニュー】")).click();
+
 		driver.findElement(By.linkText("【商品登録】")).click();
 
 		// 商品名入力

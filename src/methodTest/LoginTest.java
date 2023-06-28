@@ -22,6 +22,7 @@ public class LoginTest {
 		LoginTest logintest = new LoginTest(driver);
 		logintest.login202();
 		logintest.login203();
+		logintest.login204();
 		logintest.login101();
 	}
 
@@ -113,4 +114,36 @@ public class LoginTest {
 		driver.findElement(By.name("pw")).clear();
 	}
 
+	// ユーザーID欄またはパスワード欄を誤入力でログインボタン押下
+	public void login204() throws InterruptedException {
+
+		ArrayList<Account> list = AccountDAO.selectAll();
+
+		// ユーザーID欄入力
+		WebElement user = driver.findElement(By.name("name"));
+		user.sendKeys(list.get(0).getEmail());
+
+		// パスワード欄誤入力
+		WebElement password = driver.findElement(By.name("pw"));
+		password.sendKeys("abcde123456?");
+
+		// ログインボタンを押す
+		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
+
+//		// 入力したidとpwを削除
+//		driver.findElement(By.name("name")).clear();
+//		driver.findElement(By.name("pw")).clear();
+
+		// ユーザーID欄誤入力
+		user = driver.findElement(By.name("name"));
+		user.sendKeys("shohei");
+
+		// パスワード欄入力
+		password = driver.findElement(By.name("pw"));
+		password.sendKeys(list.get(0).getPw());
+
+		// 入力したidとpwを削除
+		driver.findElement(By.name("name")).clear();
+		driver.findElement(By.name("pw")).clear();
+	}
 }
