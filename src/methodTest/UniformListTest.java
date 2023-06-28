@@ -105,8 +105,6 @@ public class UniformListTest {
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
 
-		// 一覧に戻るをクリック
-		driver.findElement(By.linkText("【ログアウト】")).click();
 
 	}
 
@@ -129,33 +127,6 @@ public class UniformListTest {
 
 		// メニューに戻るをクリック
 		driver.findElement(By.linkText("【メニュー】")).click();
-		driver.findElement(By.linkText("【ログアウト】")).click();
 
 	}
-
-	//別のテストで使うので残しています
-	//　購入確認時、押下する予定の商品情報をMySQL上から削除する
-//		public void list204() throws InterruptedException {
-//			// 書籍登録画面まで遷移する
-//			try {
-//				driver.findElement(By.linkText("【書籍一覧】")).click();
-//			} catch (NoSuchElementException e) {
-//				driver.findElement(By.linkText("【ログアウト】")).click();
-//			}
-//
-//			ArrayList<Account> account_list = AccountDAO.selectAll();
-//
-//			String name = account_list.get(1).getName();
-//			String address = account_list.get(1).getAddress();
-//			String email = account_list.get(1).getEmail();
-//			driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
-//			uniformDao.delete(id);
-//			driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id + "&user_name=" + name + "&address="  + address + "&email=" + email + "%40gw.co.jp&quantity=5&content=");
-//			driver.findElement(By.linkText("確認して購入")).click();
-//			Thread.sleep(1000);
-//
-//			// 処理終了
-//			// メニュー画面に戻る
-//			driver.findElement(By.linkText("[メニュー画面に戻る]")).click();
-//		}
 }

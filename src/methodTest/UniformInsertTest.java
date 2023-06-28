@@ -45,8 +45,6 @@ public class UniformInsertTest {
 
 		// 登録ボタンを押す
 		driver.findElement(By.cssSelector("input[value='登録']")).click();
-
-		 //pegopa最新バージョンになったらこの処理はinsert102に移す
 	}
 
 	// 商品画像だけ未挿入

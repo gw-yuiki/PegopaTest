@@ -18,7 +18,7 @@ public class OrderHistoryListTest {
 
 	public void userList() throws InterruptedException {
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
-		orderhistorylisttest.list101();
+		orderhistorylisttest.list102();
 	}
 
 	// 商品詳細ボタンをクリック後詳細画面に遷移するか(管理者)
@@ -26,7 +26,6 @@ public class OrderHistoryListTest {
 
 		// 受注一覧画面に遷移
 		Thread.sleep(500);
-		driver.findElement(By.linkText("【メニュー】")).click();
 		driver.findElement(By.linkText("【受注一覧】")).click();
 
 		// 詳細画面に遷移
@@ -52,6 +51,10 @@ public class OrderHistoryListTest {
 		// メニューに戻る
 		Thread.sleep(500);
 		driver.findElement(By.linkText("【メニュー】")).click();
+
+		// メニューに戻る
+		Thread.sleep(500);
+		driver.findElement(By.linkText("【ログアウト】")).click();
 	}
 
 }
