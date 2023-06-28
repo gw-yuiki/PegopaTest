@@ -120,14 +120,15 @@ public class UniformListTest {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
-		uniformDao.delete(id);
+		uniformDao.delete(ad_id);
 		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + ad_id);
 		Thread.sleep(500);
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
 
-		// 一覧に戻るをクリック
+		// メニューに戻るをクリック
+		driver.findElement(By.linkText("【メニュー】")).click();
 		driver.findElement(By.linkText("【ログアウト】")).click();
 
 	}
