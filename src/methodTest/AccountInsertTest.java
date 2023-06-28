@@ -44,7 +44,7 @@ public class AccountInsertTest {
 		int i = 1;
 		while (true) {
 			// ユーザーIDが重複していないかチェック
-			InputEmail = "email" + i + "@gw.co.jp";
+			InputEmail = "NEWemail" + i + "@gw.co.jp";
 			uniqueCheck = AccountDAO.loginCheck(InputEmail);
 			if (uniqueCheck == true) {
 				break;
@@ -57,7 +57,7 @@ public class AccountInsertTest {
 
 		// 氏名欄を入力
 		WebElement name = driver.findElement(By.name("name"));
-		name.sendKeys("テストユーザー");
+		name.sendKeys("新規テストユーザー");
 
 		// パスワード欄を入力
 		WebElement pw = driver.findElement(By.name("pw"));

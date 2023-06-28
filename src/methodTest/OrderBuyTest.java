@@ -32,9 +32,9 @@ public class OrderBuyTest {
 		OrderBuyTest orderBuytest = new OrderBuyTest(driver);
 
 		// 正常動作確認
-//		orderBuytest.list101();
-//		Thread.sleep(500);
-//		orderBuytest.list102();
+		orderBuytest.list101();
+		Thread.sleep(500);
+		orderBuytest.list102();
 		orderBuytest.list201();
 		orderBuytest.list202();
 		orderBuytest.list203();
@@ -62,11 +62,6 @@ public class OrderBuyTest {
 		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
 
-		// ダイアログのOKボタンを押下
-		Alert alert = driver.switchTo().alert();
-		Thread.sleep(500);
-		alert.accept();
-
 		// 正常処理終了
 		//注文完了画面
 		Thread.sleep(500);
@@ -91,7 +86,7 @@ public class OrderBuyTest {
 		//非会員のため情報入力
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("user_name"));
-		name.sendKeys("ichiro");
+		name.sendKeys("newuser");
 
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
@@ -99,7 +94,7 @@ public class OrderBuyTest {
 
 		// 住所を入力
 		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys("aichi@mail.com");
+		email.sendKeys("newuser@mail.com");
 
 		//セレクトボックス
 		WebElement quantity = driver.findElement(By.name("quantity"));
@@ -118,10 +113,10 @@ public class OrderBuyTest {
 		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
 
-		// ダイアログのOKボタンを押下
-		Alert alert = driver.switchTo().alert();
-		Thread.sleep(500);
-		alert.accept();
+//		// ダイアログのOKボタンを押下
+//		Alert alert = driver.switchTo().alert();
+//		Thread.sleep(500);
+//		alert.accept();
 
 		// 正常処理終了
 		//注文完了画面

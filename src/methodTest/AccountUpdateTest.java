@@ -15,20 +15,20 @@ public class AccountUpdateTest {
 
 	public void AccountUpdate() throws InterruptedException {
 		AccountUpdateTest accountUpdateTest = new AccountUpdateTest(driver);
-		accountUpdateTest.accountUpdate101();
 		accountUpdateTest.accountUpdate102();
 		accountUpdateTest.accountUpdate103();
 		accountUpdateTest.accountUpdate104();
 		accountUpdateTest.accountUpdate105();
-		accountUpdateTest.accountUpdate100();
+		accountUpdateTest.accountUpdate106();
+		accountUpdateTest.accountUpdate101();
 	}
 
 	// 正常にユーザー情報を変更できるか
-	public void accountUpdate100() throws InterruptedException {
+	public void accountUpdate101() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));
-		name.sendKeys("ichiro");
+		name.sendKeys("変更後テストユーザー");
 
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
@@ -56,7 +56,7 @@ public class AccountUpdateTest {
 	}
 
 	// 氏名を未入力で変更完了ボタン押下
-	public void accountUpdate101() throws InterruptedException {
+	public void accountUpdate102() throws InterruptedException {
 
 		// 会員情報変更ボタンクリック
 		driver.findElement(By.linkText("【会員情報変更】")).click();
@@ -96,7 +96,7 @@ public class AccountUpdateTest {
 	}
 
 	// 住所を未入力で変更完了ボタン押下
-	public void accountUpdate102() throws InterruptedException {
+	public void accountUpdate103() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));
@@ -127,7 +127,7 @@ public class AccountUpdateTest {
 	}
 
 	// パスワードを未入力で変更完了ボタン押下
-	public void accountUpdate103() throws InterruptedException {
+	public void accountUpdate104() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));
@@ -156,7 +156,7 @@ public class AccountUpdateTest {
 	}
 
 	// パスワード(確認用)を未入力で変更完了ボタン押下
-	public void accountUpdate104() throws InterruptedException {
+	public void accountUpdate105() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));
@@ -187,7 +187,7 @@ public class AccountUpdateTest {
 	}
 
 	// パスワードとパスワード(確認用)が間違っている場合
-	public void accountUpdate105() throws InterruptedException {
+	public void accountUpdate106() throws InterruptedException {
 
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("name"));

@@ -26,6 +26,11 @@ public class LoginTest {
 		logintest.login101();
 	}
 
+	public void LoginOmission() throws InterruptedException {
+		LoginTest logintest = new LoginTest(driver);
+		logintest.login101();
+	}
+
 	public void adminLogin() throws InterruptedException {
 		LoginTest logintest = new LoginTest(driver);
 		logintest.login102();
@@ -38,11 +43,11 @@ public class LoginTest {
 
 		// ユーザーID入力
 		WebElement user = driver.findElement(By.name("name"));
-		user.sendKeys(list.get(0).getEmail());
+		user.sendKeys(list.get(2).getEmail());
 
 		// パスワード欄入力
 		WebElement password = driver.findElement(By.name("pw"));
-		password.sendKeys(list.get(0).getPw());
+		password.sendKeys(list.get(2).getPw());
 
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();

@@ -31,17 +31,11 @@ public class UniformUpdateTest {
 	public void update() throws InterruptedException {
 		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
 		uniformUpdateTest.update101();
-		Thread.sleep(1000);
 		uniformUpdateTest.update102();
-		Thread.sleep(1000);
 		uniformUpdateTest.update103();
-		Thread.sleep(1000);
 		uniformUpdateTest.update104();
-		Thread.sleep(1000);
 		uniformUpdateTest.update105();
-		Thread.sleep(1000);
 		uniformUpdateTest.update100();
-		Thread.sleep(1000);
 		uniformUpdateTest.update106();
 	}
 
