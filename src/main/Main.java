@@ -66,8 +66,8 @@ public class Main {
 		logintest.adminLogin();
 //
 //		//管理者メニュー
-		Thread.sleep(500);
-		menuTest.adminMenu();
+//		Thread.sleep(500);
+//		menuTest.adminMenu();
 
 //		//商品新規登録
 		Thread.sleep(500);
