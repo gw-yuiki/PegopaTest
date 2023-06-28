@@ -275,6 +275,7 @@ public class UniformUpdateTest {
 		}
 
 		uniformDao.delete(id);
+
 		// 変更ボタンを押す
 		driver.findElement(By.cssSelector("input[value='変更']")).click();
 		Thread.sleep(1000);
