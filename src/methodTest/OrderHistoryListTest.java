@@ -1,6 +1,7 @@
 package methodTest;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class OrderHistoryListTest {
 
@@ -10,12 +11,17 @@ public class OrderHistoryListTest {
 		this.driver = driver;
 	}
 
-	public void list() throws InterruptedException{
+	public void adminList() throws InterruptedException {
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
 		orderhistorylisttest.list101();
 	}
 
-	// 商品詳細ボタンをクリック後詳細画面に遷移するか
+	public void userList() throws InterruptedException {
+		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
+		orderhistorylisttest.list101();
+	}
+
+	// 商品詳細ボタンをクリック後詳細画面に遷移するか(管理者)
 	public void list101() throws InterruptedException {
 
 		// 受注一覧画面に遷移
@@ -35,4 +41,17 @@ public class OrderHistoryListTest {
 		Thread.sleep(500);
 		driver.findElement(By.linkText("【メニュー】")).click();
 	}
+
+	// 商品詳細ボタンをクリック後詳細画面に遷移するか(ユーザー)
+	public void list102() throws InterruptedException {
+
+		// 受注一覧画面に遷移
+		Thread.sleep(500);
+		driver.findElement(By.linkText("【注文一覧】")).click();
+
+		// メニューに戻る
+		Thread.sleep(500);
+		driver.findElement(By.linkText("【メニュー】")).click();
+	}
+
 }
