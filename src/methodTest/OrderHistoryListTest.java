@@ -20,6 +20,7 @@ public class OrderHistoryListTest {
 
 		// 受注一覧画面に遷移
 		Thread.sleep(500);
+		driver.findElement(By.linkText("【メニュー】")).click();
 		driver.findElement(By.linkText("【受注一覧】")).click();
 
 		// 詳細画面に遷移
