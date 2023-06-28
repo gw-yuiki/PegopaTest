@@ -7,6 +7,7 @@ import methodTest.AccountInsertTest;
 import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
 import methodTest.MenuTest;
+import methodTest.OrderBuyTest;
 import methodTest.OrderHistoryListTest;
 import methodTest.UniformInsertTest;
 import methodTest.UniformListTest;
@@ -32,14 +33,15 @@ public class Main {
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
 		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
+		OrderBuyTest orderBuyTest = new OrderBuyTest(driver);
 
 		// 新規会員登録
 //		Thread.sleep(500);
 //		accountInsertTest.Insert();
 //
-//		// ログイン
-//		Thread.sleep(500);
-//		logintest.Login();
+		// ログイン
+		Thread.sleep(500);
+		logintest.Login();
 //
 //		//ユーザー情報変更
 //		Thread.sleep(500);
@@ -58,8 +60,8 @@ public class Main {
 //		uniformListTest.UniformList();
 
 //		// 管理者ログイン
-		Thread.sleep(500);
-		logintest.adminLogin();
+//		Thread.sleep(500);
+//		logintest.adminLogin();
 //
 //		//管理者メニュー
 //		Thread.sleep(500);
@@ -71,15 +73,16 @@ public class Main {
 //
 //		Thread.sleep(500);
 //		orderhistorylisttest.list();
+
+//		// 商品変更
+//		Thread.sleep(500);
+//		uniformUpdateTest.update();
 //
+////		// 管理者商品一覧
+//		Thread.sleep(500);
+//		uniformListTest.adminUniformList();
 
-		// 商品変更
-		Thread.sleep(500);
-		uniformUpdateTest.update();
-
-//		// 管理者商品一覧
-		Thread.sleep(500);
-		uniformListTest.adminUniformList();
+		orderBuyTest.OrderBuy();
 
 		driver.quit();
 	}

@@ -2,9 +2,12 @@ package methodTest;
 
 import java.util.ArrayList;
 
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import bean.Uniform;
 import dao.UniformDAO;
@@ -17,7 +20,6 @@ public class OrderBuyTest {
 	ArrayList<Uniform> list = uniformDao.selectAll();
 
     int id = list.get(0).getId();
-    int ad_id = list.get(1).getId();
 
 	public OrderBuyTest(WebDriver driver) {
 		this.driver = driver;
@@ -30,12 +32,12 @@ public class OrderBuyTest {
 		// 正常動作確認
 		orderBuytest.list101();
 		Thread.sleep(500);
-		orderBuytest.list201();
+		orderBuytest.list102();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
 	}
 
-	// 購入者(一般ユーザー)正常に一覧表示処理が行われるか
+	// 会員購入処理が行われるか
 	public void list101() throws InterruptedException {
 
 		// No.101 商品一覧画面まで遷移する
@@ -48,31 +50,77 @@ public class OrderBuyTest {
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 		Thread.sleep(500);
-		driver.findElement(By.linkText("【商品一覧】")).click();
+		driver.findElement(By.cssSelector("input[value='購入']")).click();
+
+		//注文内容確認画面
+		Thread.sleep(500);
+		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
+
+		// ダイアログのOKボタンを押下
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(500);
+		alert.accept();
 
 		// 正常処理終了
-		// No.103 メニュー画面に戻る
-		driver.findElement(By.linkText("【メニュー】")).click();
+		//注文完了画面
+		Thread.sleep(500);
+		driver.findElement(By.linkText("戻る")).click();
+
 	}
 
-	// 管理者で正常に一覧表示処理が行われるか
+	// 非会員購入処理が行われるか
 	public void list102() throws InterruptedException {
 
 		// No.101 商品一覧画面まで遷移する
 		try {
-			driver.findElement(By.linkText("【商品一覧】")).click();
+			driver.findElement(By.linkText("【ログアウト】")).click();
 		} catch (NoSuchElementException e) {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
 		// No.102 既に登録されているISBNを入力
-		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + ad_id);
+		driver.findElement(By.linkText("会員登録をせずに購入する")).click();
+		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
+
+		//非会員のため情報入力
+		//氏名を入力
+		WebElement name = driver.findElement(By.name("user_name"));
+		name.sendKeys("ichiro");
+
+		// 住所を入力
+		WebElement address = driver.findElement(By.name("address"));
+		address.sendKeys("愛知県");
+
+		// 住所を入力
+		WebElement email = driver.findElement(By.name("email"));
+		email.sendKeys("aichi@mail.com");
+
+		//セレクトボックス
+		WebElement quantity = driver.findElement(By.name("quantity"));
+		Select select = new Select(quantity);
+		select.selectByValue("2");
+
+		// 住所を入力
+		WebElement content = driver.findElement(By.name("content"));
+		content.sendKeys("よろしくお願いいたします。");
+
+		//購入ボタンクリック
 		Thread.sleep(500);
-		driver.findElement(By.linkText("【商品一覧】")).click();
+		driver.findElement(By.cssSelector("input[value='購入']")).click();
+
+		//注文内容確認画面
+		Thread.sleep(500);
+		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
+
+		// ダイアログのOKボタンを押下
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(500);
+		alert.accept();
 
 		// 正常処理終了
-		// No.103 メニュー画面に戻る
-		driver.findElement(By.linkText("【メニュー】")).click();
+		//注文完了画面
+		Thread.sleep(500);
+		driver.findElement(By.linkText("戻る")).click();
 	}
 
 	// 異常処理
@@ -108,8 +156,8 @@ public class OrderBuyTest {
 			driver.findElement(By.linkText("【ログアウト】")).click();
 		}
 
-		uniformDao.delete(ad_id);
-		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + ad_id);
+		uniformDao.delete(id);
+		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + id);
 		Thread.sleep(500);
 
 		// 一覧に戻るをクリック
