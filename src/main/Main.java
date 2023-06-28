@@ -1,6 +1,5 @@
 package main;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,10 +7,14 @@ import methodTest.AccountInsertTest;
 import methodTest.AccountUpdateTest;
 import methodTest.LoginTest;
 import methodTest.MenuTest;
-import methodTest.UniformListTest;
-import methodTest.UniformInsertTest;
 import methodTest.OrderHistoryListTest;
+<<<<<<< HEAD
 import methodTest.OrderHistoryUpdateTest;
+=======
+import methodTest.UniformInsertTest;
+import methodTest.UniformListTest;
+import methodTest.UniformUpdateTest;
+>>>>>>> c24411aed2b63dd48002bd9d03a57fa141752edf
 
 public class Main {
 
@@ -32,7 +35,11 @@ public class Main {
 		UniformListTest uniformListTest = new UniformListTest(driver);
 		UniformInsertTest uniforminserttest = new UniformInsertTest(driver);
 		OrderHistoryListTest orderhistorylisttest = new OrderHistoryListTest(driver);
+<<<<<<< HEAD
 		OrderHistoryUpdateTest orderhistoryupdatetest = new OrderHistoryUpdateTest(driver);
+=======
+		UniformUpdateTest uniformUpdateTest = new UniformUpdateTest(driver);
+>>>>>>> c24411aed2b63dd48002bd9d03a57fa141752edf
 
 		// 新規会員登録
 //		Thread.sleep(500);
@@ -58,14 +65,27 @@ public class Main {
 //		Thread.sleep(500);
 //		uniformListTest.UniformList();
 
-		// 管理者ログイン
+//		// 管理者ログイン
 		Thread.sleep(500);
 		logintest.adminLogin();
+//
+//		//管理者メニュー
+//		Thread.sleep(500);
+//		menuTest.adminMenu();
+//
+//		//商品新規登録
+//		Thread.sleep(500);
+//		uniforminserttest.insert();
+//
+//		Thread.sleep(500);
+//		orderhistorylisttest.list();
+//
 
-		//管理者メニュー
+		// 商品変更
 		Thread.sleep(500);
-		menuTest.adminMenu();
+		uniformUpdateTest.update();
 
+<<<<<<< HEAD
 		//管理者商品新規登録
 //		Thread.sleep(500);
 //		uniforminserttest.insert();
@@ -79,6 +99,9 @@ public class Main {
 		orderhistoryupdatetest.update();
 
 		// 管理者商品一覧
+=======
+//		// 管理者商品一覧
+>>>>>>> c24411aed2b63dd48002bd9d03a57fa141752edf
 		Thread.sleep(500);
 		uniformListTest.adminUniformList();
 

@@ -53,14 +53,13 @@ public class OrderHistoryUpdateTest {
 
 		// メールボックスを開く
 		driver.get("https://webmail.xserver.ne.jp/");
-
 		WebElement email = driver.findElement(By.name("_user"));
 		email.sendKeys("system.project.team15@kanda-it-school-system.com");
-
 		WebElement pass = driver.findElement(By.name("_pass"));
 		pass.sendKeys("i1jkv4dR4Z8m0bA");
-
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
+
+
 
 		driver.findElement(By.linkText("【メニュー】")).click();
 	}
