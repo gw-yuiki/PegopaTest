@@ -275,7 +275,7 @@ public class UniformUpdateTest {
 		}
 
 		uniformDao.delete(id);
-		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
+		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + id);
 		Thread.sleep(1000);
 
 		// 一覧に戻るをクリック

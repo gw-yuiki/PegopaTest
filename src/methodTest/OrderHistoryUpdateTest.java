@@ -38,15 +38,10 @@ public class OrderHistoryUpdateTest {
 		WebElement selectDeposit = driver.findElement(By.name("deposit"));
 		Select deposit = new Select(selectDeposit);
 
-		// 発送状況のセレクトボックスの値を変更
-		WebElement selectShipping = driver.findElement(By.name("shipping"));
-		Select shipping = new Select(selectShipping);
-
 		// 入金状況を「入金済」に変更
+		Thread.sleep(500);
 		deposit.selectByValue("入金済");
-
-		// 発送状況を「発送済」に変更
-		shipping.selectByValue("発送済");
+		Thread.sleep(500);
 
 		// 更新ボタンを押す
 		driver.findElement(By.cssSelector("input[value='更新']")).click();
@@ -58,8 +53,30 @@ public class OrderHistoryUpdateTest {
 		WebElement pass = driver.findElement(By.name("_pass"));
 		pass.sendKeys("i1jkv4dR4Z8m0bA");
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
+		Thread.sleep(3000);
 
+		// 商品詳細画面に遷移
+		driver.get("http://localhost:8080/pegopa/orderHistory");
+		driver.findElement(By.linkText("詳細")).click();
 
+		// 発送状況のセレクトボックスの値を変更
+		WebElement selectShipping = driver.findElement(By.name("shipping"));
+		Select shipping = new Select(selectShipping);
+
+		// 発送状況を「発送済」に変更
+		Thread.sleep(500);
+		shipping.selectByValue("発送済");
+		Thread.sleep(500);
+
+		// 更新ボタンを押す
+		driver.findElement(By.cssSelector("input[value='更新']")).click();
+
+		// メールボックスを開く
+		driver.get("https://webmail.xserver.ne.jp/");
+		Thread.sleep(3000);
+
+		// 商品詳細画面に遷移
+		driver.get("http://localhost:8080/pegopa/orderHistory");
 
 		driver.findElement(By.linkText("【メニュー】")).click();
 	}
