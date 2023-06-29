@@ -35,12 +35,14 @@ public class UniformUpdateTest {
 		uniformUpdateTest.update103();
 		uniformUpdateTest.update104();
 		uniformUpdateTest.update105();
-		uniformUpdateTest.update100();
 		uniformUpdateTest.update106();
+		uniformUpdateTest.update100();
 	}
 
 	//正常に商品変更処理が行われるか
 	public void update100() throws InterruptedException {
+
+		driver.findElements(By.className("product")).get(0).click();
 
 		//種類を入力
 		WebElement name = driver.findElement(By.name("name"));
@@ -58,7 +60,6 @@ public class UniformUpdateTest {
 		WebElement stock = driver.findElement(By.name("stock"));
 		stock.sendKeys("15");
 
-		Thread.sleep(500);
 		// 変更完了ボタンを押す
 		driver.findElement(By.cssSelector("input[value='変更']")).click();
 	}
@@ -125,7 +126,7 @@ public class UniformUpdateTest {
 
 		// ダイアログのOKボタンを押下
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		alert.accept();
 
 		// 入力した種類を削除
@@ -154,7 +155,7 @@ public class UniformUpdateTest {
 
 		// ダイアログのOKボタンを押下
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		alert.accept();
 
 		// 入力した種類を削除
@@ -188,7 +189,7 @@ public class UniformUpdateTest {
 
 		// ダイアログのOKボタンを押下
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		alert.accept();
 
 		// 入力した種類を削除
@@ -223,7 +224,7 @@ public class UniformUpdateTest {
 
 		// ダイアログのOKボタンを押下
 		Alert alert = driver.switchTo().alert();
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		alert.accept();
 
 		// 入力した内容を全てクリア
@@ -248,7 +249,7 @@ public class UniformUpdateTest {
 		driver.findElement(By.cssSelector("input[value='変更']")).click();
 
 		// ダイアログのOKボタンを押下
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		alert.accept();
 
 		// 入力した内容を全てクリア
@@ -273,12 +274,8 @@ public class UniformUpdateTest {
 
 		// 変更ボタンを押す
 		driver.findElement(By.cssSelector("input[value='変更']")).click();
-		Thread.sleep(1000);
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
-
-		// 一覧に戻るをクリック
-		driver.findElement(By.linkText("【メニュー】")).click();
 	}
 }

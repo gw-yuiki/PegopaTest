@@ -145,10 +145,6 @@ public class AccountUpdateTest {
 		Thread.sleep(500);
 		alert.accept();
 
-//		// ダイアログのOKボタンを押下
-//		Thread.sleep(500);
-//		alert.accept();
-
 		// 入力した氏名を削除
 		driver.findElement(By.name("name")).clear();
 		// 住所を削除

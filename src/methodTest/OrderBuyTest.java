@@ -32,13 +32,21 @@ public class OrderBuyTest {
 		OrderBuyTest orderBuytest = new OrderBuyTest(driver);
 
 		// 正常動作確認
-		orderBuytest.list101();
-		Thread.sleep(500);
-		orderBuytest.list102();
 		orderBuytest.list201();
 		orderBuytest.list202();
 		orderBuytest.list203();
 		orderBuytest.list204();
+
+		// DB接続エラーのテストケースがありますが、今回はやりません
+	}
+
+	//一覧機能をテストするメソッドを呼び出す
+	public void OrderBuyNormal() throws InterruptedException {
+		OrderBuyTest orderBuytest = new OrderBuyTest(driver);
+
+		// 正常動作確認
+		orderBuytest.list101();
+		orderBuytest.list102();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
 	}
@@ -55,16 +63,13 @@ public class OrderBuyTest {
 
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='購入']")).click();
 
 		//注文内容確認画面
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
 
 		// 正常処理終了
 		//注文完了画面
-		Thread.sleep(500);
 		driver.findElement(By.linkText("戻る")).click();
 
 	}
@@ -86,15 +91,15 @@ public class OrderBuyTest {
 		//非会員のため情報入力
 		//氏名を入力
 		WebElement name = driver.findElement(By.name("user_name"));
-		name.sendKeys("newuser");
+		name.sendKeys("非会員ユーザー");
 
 		// 住所を入力
 		WebElement address = driver.findElement(By.name("address"));
-		address.sendKeys("愛知県");
+		address.sendKeys("沖縄県");
 
 		// 住所を入力
 		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys("newuser@mail.com");
+		email.sendKeys("system.project.team15@kanda-it-school-system.com");
 
 		//セレクトボックス
 		WebElement quantity = driver.findElement(By.name("quantity"));
@@ -106,21 +111,13 @@ public class OrderBuyTest {
 		content.sendKeys("よろしくお願いいたします。");
 
 		//購入ボタンクリック
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='購入']")).click();
 
 		//注文内容確認画面
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='確認して購入']")).click();
-
-//		// ダイアログのOKボタンを押下
-//		Alert alert = driver.switchTo().alert();
-//		Thread.sleep(500);
-//		alert.accept();
 
 		// 正常処理終了
 		//注文完了画面
-		Thread.sleep(500);
 		driver.findElement(By.linkText("戻る")).click();
 	}
 
@@ -159,7 +156,6 @@ public class OrderBuyTest {
 		content.sendKeys("よろしくお願いいたします。");
 
 		//購入ボタンクリック
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='購入']")).click();
 
 		// ダイアログのOKボタンを押下
@@ -194,7 +190,6 @@ public class OrderBuyTest {
 		content.sendKeys("よろしくお願いいたします。");
 
 		//購入ボタンクリック
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='購入']")).click();
 
 		// ダイアログのOKボタンを押下
@@ -229,7 +224,6 @@ public class OrderBuyTest {
 		content.sendKeys("よろしくお願いいたします。");
 
 		//購入ボタンクリック
-		Thread.sleep(500);
 		driver.findElement(By.cssSelector("input[value='購入']")).click();
 
 		// ダイアログのOKボタンを押下
@@ -258,7 +252,6 @@ public class OrderBuyTest {
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
 		uniformDao.delete(id);
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id + "&user_name=" + name + "&address="  + address + "&email=" + email + "%40gw.co.jp&quantity=1&content=");
-		Thread.sleep(1500);
 		driver.findElement(By.linkText("戻る")).click();
 	}
 }
