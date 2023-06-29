@@ -28,9 +28,8 @@ public class UniformListTest {
 		UniformListTest listtest = new UniformListTest(driver);
 
 		// 正常動作確認
-		listtest.list101();
-		Thread.sleep(500);
 		listtest.list201();
+		listtest.list101();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
 	}
@@ -40,9 +39,8 @@ public class UniformListTest {
 		UniformListTest listtest = new UniformListTest(driver);
 
 		// 正常動作確認
-		listtest.list102();
-		Thread.sleep(500);
 		listtest.list202();
+		listtest.list102();
 
 		// DB接続エラーのテストケースがありますが、今回はやりません
 	}
@@ -59,7 +57,6 @@ public class UniformListTest {
 
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【商品一覧】")).click();
 
 		// 正常処理終了
@@ -79,7 +76,6 @@ public class UniformListTest {
 
 		// No.102 既に登録されているISBNを入力
 		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + ad_id);
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【商品一覧】")).click();
 
 		// 正常処理終了
@@ -100,7 +96,6 @@ public class UniformListTest {
 
 		uniformDao.delete(id);
 		driver.get("http://localhost:8080/pegopa/orderBuy?cmd=1&id=" + id);
-		Thread.sleep(500);
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();
@@ -120,7 +115,6 @@ public class UniformListTest {
 
 		uniformDao.delete(ad_id);
 		driver.get("http://localhost:8080/pegopa/uniformUpdate?cmd=1&id=" + ad_id);
-		Thread.sleep(500);
 
 		// 一覧に戻るをクリック
 		driver.findElement(By.linkText("戻る")).click();

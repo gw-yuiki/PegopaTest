@@ -135,10 +135,6 @@ public class LoginTest {
 		// ログインボタンを押す
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
 
-//		// 入力したidとpwを削除
-//		driver.findElement(By.name("name")).clear();
-//		driver.findElement(By.name("pw")).clear();
-
 		// ユーザーID欄誤入力
 		user = driver.findElement(By.name("name"));
 		user.sendKeys("shohei");

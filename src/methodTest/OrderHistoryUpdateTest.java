@@ -23,11 +23,9 @@ public class OrderHistoryUpdateTest {
 	public void update101() throws InterruptedException {
 
 		// 受注一覧画面に遷移
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【受注一覧】")).click();
 
 		// 詳細画面に遷移
-		Thread.sleep(500);
 		driver.findElement(By.linkText("詳細")).click();
 	}
 
@@ -39,9 +37,7 @@ public class OrderHistoryUpdateTest {
 		Select deposit = new Select(selectDeposit);
 
 		// 入金状況を「入金済」に変更
-		Thread.sleep(500);
 		deposit.selectByValue("入金済");
-		Thread.sleep(500);
 
 		// 更新ボタンを押す
 		driver.findElement(By.cssSelector("input[value='更新']")).click();
@@ -53,7 +49,7 @@ public class OrderHistoryUpdateTest {
 		WebElement pass = driver.findElement(By.name("_pass"));
 		pass.sendKeys("i1jkv4dR4Z8m0bA");
 		driver.findElement(By.cssSelector("input[value='ログイン']")).click();
-		Thread.sleep(3000);
+		Thread.sleep(1500);
 
 		// 商品詳細画面に遷移
 		driver.get("http://localhost:8080/pegopa/orderHistory");
@@ -64,16 +60,14 @@ public class OrderHistoryUpdateTest {
 		Select shipping = new Select(selectShipping);
 
 		// 発送状況を「発送済」に変更
-		Thread.sleep(500);
 		shipping.selectByValue("発送済");
-		Thread.sleep(500);
 
 		// 更新ボタンを押す
 		driver.findElement(By.cssSelector("input[value='更新']")).click();
 
 		// メールボックスを開く
 		driver.get("https://webmail.xserver.ne.jp/");
-		Thread.sleep(3000);
+		Thread.sleep(1500);
 
 		// 商品詳細画面に遷移
 		driver.get("http://localhost:8080/pegopa/orderHistory");

@@ -25,19 +25,16 @@ public class OrderHistoryListTest {
 	public void list101() throws InterruptedException {
 
 		// 受注一覧画面に遷移
-		Thread.sleep(500);
+		driver.findElement(By.linkText("【メニュー】")).click();
 		driver.findElement(By.linkText("【受注一覧】")).click();
 
 		// 詳細画面に遷移
-		Thread.sleep(500);
 		driver.findElement(By.linkText("詳細")).click();
 
 		// 受注一覧画面に戻る
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【受注一覧】")).click();
 
 		// メニューに戻る
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【メニュー】")).click();
 	}
 
@@ -45,15 +42,12 @@ public class OrderHistoryListTest {
 	public void list102() throws InterruptedException {
 
 		// 受注一覧画面に遷移
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【注文一覧】")).click();
 
 		// メニューに戻る
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【メニュー】")).click();
 
 		// メニューに戻る
-		Thread.sleep(500);
 		driver.findElement(By.linkText("【ログアウト】")).click();
 	}
 

@@ -30,7 +30,6 @@ public class AccountInsertTest {
 		ait.insert205();
 		// 住所未入力で登録ボタンを押下した際にアラートが出るか
 		ait.insert206();
-
 		// 正常に会員を登録できるか
 		ait.insert101();
 	}
@@ -53,7 +52,7 @@ public class AccountInsertTest {
 		}
 		// ユーザーID欄を入力
 		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys(InputEmail);
+		email.sendKeys("system.project.team15@kanda-it-school-system.com");
 
 		// 氏名欄を入力
 		WebElement name = driver.findElement(By.name("name"));
